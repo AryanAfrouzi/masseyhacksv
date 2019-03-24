@@ -1,5 +1,7 @@
 import socket, time, json, datetime, platform, psutil, requests, pprint, uuid
 
+
+
 def main():
     # Hostname Info
     hostname = socket.gethostname()
@@ -128,7 +130,7 @@ def get_bandwidth():
     else:
         current_out = net2_out - net1_out
     
-    network = {"traffic_in" : current_in, "traffic_out" : current_out}
+    network = {"traffic_in": current_in, "traffic_out": current_out}
     return network
 
 def send_data(data):
@@ -136,8 +138,8 @@ def send_data(data):
     for attempt in range(30):
         try:
             # endpoint = monitoring server
-            endpoint = "http://monitor.localhost.local/api/"
-            response = requests.post(url = endpoint, data = data)
+            endpoint = "http://www.oxydb.com/maseyhacksv/api.php"
+            response = requests.post(url = endpoint, data=data)
             print("\nPOST:")
             print("Response:", response.status_code)
             print("Headers:")
