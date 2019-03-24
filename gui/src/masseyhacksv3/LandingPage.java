@@ -5,7 +5,9 @@
  */
 package masseyhacksv3;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.Frame;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -35,12 +37,27 @@ public class LandingPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         ScanButton = new javax.swing.JButton();
         ChangeModeButton = new javax.swing.JButton();
         AboutButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        ChangeThemeButton = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("Frame"); // NOI18N
+        setResizable(false);
 
         ScanButton.setText("Scan");
         ScanButton.addActionListener(new java.awt.event.ActionListener() {
@@ -49,7 +66,7 @@ public class LandingPage extends javax.swing.JFrame {
             }
         });
 
-        ChangeModeButton.setText("Change Mode");
+        ChangeModeButton.setText("Change Size");
         ChangeModeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ChangeModeButtonActionPerformed(evt);
@@ -67,38 +84,48 @@ public class LandingPage extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("Chungus Antivirus");
 
+        ChangeThemeButton.setText("Change Theme");
+        ChangeThemeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChangeThemeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(193, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ScanButton)
-                        .addGap(50, 50, 50))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(170, 170, 170))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AboutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ChangeModeButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ChangeThemeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AboutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ChangeModeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addComponent(ScanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(232, 232, 232))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addGap(38, 38, 38)
-                .addComponent(ChangeModeButton)
-                .addGap(20, 20, 20)
-                .addComponent(ScanButton)
-                .addGap(37, 37, 37)
-                .addComponent(AboutButton)
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ScanButton, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                        .addContainerGap(129, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ChangeModeButton)
+                        .addGap(34, 34, 34)
+                        .addComponent(ChangeThemeButton)
+                        .addGap(37, 37, 37)
+                        .addComponent(AboutButton)
+                        .addGap(77, 77, 77))))
         );
 
         pack();
@@ -107,43 +134,88 @@ public class LandingPage extends javax.swing.JFrame {
     private void ScanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScanButtonActionPerformed
 //INSERT SCAN STUFF HERE//
     }//GEN-LAST:event_ScanButtonActionPerformed
-        int FileHolder = 0;
+    int FileHolder = 0;
     private void ChangeModeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeModeButtonActionPerformed
         Font largeFont = new Font("Arial", Font.PLAIN, 40);
+        Font medFont = new Font("Arial", Font.PLAIN, 28);
         Font smallFont = new Font("Arial", Font.PLAIN, 14);
 
-
-
         if (FileHolder == 0) {
+            ChangeModeButton.setFont(medFont);
+            AboutButton.setFont(medFont);
+            ChangeThemeButton.setFont(medFont);
+            ScanButton.setFont(medFont);
+            FileHolder = 5;
+
+        } else if (FileHolder == 1) {
             ChangeModeButton.setFont(largeFont);
             AboutButton.setFont(largeFont);
             ScanButton.setFont(largeFont);
-            FileHolder = 5;
+            ChangeThemeButton.setFont(largeFont);
+            FileHolder = 7;
 
-
-
-        } else if (FileHolder == 1) {
+        } else if (FileHolder == 2) {
             ChangeModeButton.setFont(smallFont);
             AboutButton.setFont(smallFont);
+            ChangeThemeButton.setFont(smallFont);
             ScanButton.setFont(smallFont);
-            FileHolder = 0;
+            FileHolder = 9;
 
         }
         if (FileHolder == 5) {
             FileHolder = 1;
         }
 
-        System.out.println(FileHolder);
+        if (FileHolder == 7) {
+            FileHolder = 2;
+        }
 
+        if (FileHolder == 9) {
+            FileHolder = 0;
+        }
 
 
     }//GEN-LAST:event_ChangeModeButtonActionPerformed
 
     private void AboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutButtonActionPerformed
-        this.dispose();
-        JFrame About = new JFrame();
-    }//GEN-LAST:event_AboutButtonActionPerformed
 
+        this.dispose();//to close the current jframe
+
+        new About().setVisible(true);
+    }//GEN-LAST:event_AboutButtonActionPerformed
+    int themeChooser = 0;
+    private void ChangeThemeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeThemeButtonActionPerformed
+
+        Color lightTheme = new Color(225, 225, 225);
+        Color blueTheme = new Color(180, 190, 210);
+        Color grayTheme = new Color(150, 150, 150);
+
+        if (themeChooser == 0) {
+            getContentPane().setBackground(lightTheme);
+            themeChooser = 5;
+        }
+        if (themeChooser == 1) {
+            getContentPane().setBackground(blueTheme);
+            themeChooser = 7;
+        }
+
+        if (themeChooser == 2) {
+            getContentPane().setBackground(grayTheme);
+            themeChooser = 9;
+        }
+        if (themeChooser == 5) {
+            themeChooser = 1;
+            jLabel1.setForeground(Color.BLACK);
+        }
+        if (themeChooser == 7) {
+            themeChooser = 2;
+            jLabel1.setForeground(Color.BLACK);
+        }
+        if (themeChooser == 9) {
+            themeChooser = 0;
+            jLabel1.setForeground(lightTheme);
+        }
+    }//GEN-LAST:event_ChangeThemeButtonActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -190,7 +262,9 @@ public class LandingPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AboutButton;
     private javax.swing.JButton ChangeModeButton;
+    private javax.swing.JButton ChangeThemeButton;
     private javax.swing.JButton ScanButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
