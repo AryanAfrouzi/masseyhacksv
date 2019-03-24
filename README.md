@@ -30,5 +30,5 @@
     
     
   # What's Next For "Better Name" ?
-     - If things go right *Knocking on some wood, we will continue to improve the accuracy, dataset, and marketing front for our program and become the next Elon Muskuteers. No pun intended 
+   If things go right *Knocking on some wood, we will continue to improve the accuracy, dataset, and marketing front for our program and become the next Elon Muskuteers. No pun intended 
     
