@@ -34,7 +34,6 @@ def normalize(column_id):
         X[x][column_id] = (cval - cmin) / (cmax - cmin)
     return column
     #normalized_data = (data - minimum) / (maximum - minimum)
-print(normalize(0))
 
 model = Sequential()
 model.add(Dense(55, input_dim=54, activation='relu'))
