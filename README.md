@@ -7,7 +7,8 @@
 
   # How We Built It:
 
-   Our antivirus was written mainly in python3 and is driven by supervised machine learning. We used Keras, and numpy to supervise the AI. As an additional feature we used the classic signature method to help increase overall malware detection for our program. We used a dataset with PE(Portable Excutable Headers) to train our model. We also setup multiple monitoring systems for packet analysis, and RAM usage. We used data normalization to increase accuracy and learning speed for the AI. 
+   Our antivirus was written mainly in python3 and is driven by supervised machine learning. We used Keras, and numpy to supervise the AI. As an additional feature we used the classic signature method to help increase overall malware detection for our program. We used a dataset with PE(Portable Excutable Headers) to analyze/train our model to recognize malicious patterns
+   . We also setup multiple monitoring systems for packet analysis, and RAM usage. We used data normalization to increase accuracy and learning speed for the AI. 
 
 
   # Challenges We Ran Into:
