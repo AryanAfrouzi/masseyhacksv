@@ -8,10 +8,12 @@ package masseyhacksv3;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 import javax.swing.JFrame;
 
@@ -132,7 +134,35 @@ public class LandingPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ScanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScanButtonActionPerformed
-//INSERT SCAN STUFF HERE//
+        //String prg = "import sys";
+        try {//as long as python exe path is working, it should work???
+            File inputFile1 = new File("monitor.py");
+            Scanner scanner = new Scanner(inputFile1);
+
+            if (scanner.hasNextLine()) {
+                String PythonAppPath = "C:\\Users\\Sterling\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe";
+                
+                String MonitorPath = "C:\\Users\\Sterling\\Desktop\\masseyhacksv\\monitor.py";
+                Process p = Runtime.getRuntime().exec(PythonAppPath + " " + MonitorPath);
+                System.out.println("yay");
+
+            } else {
+                System.exit(0);
+            }
+
+            /*
+            
+            mentor's edits
+            
+            Process p = Runtime.getRuntime().exec("C:\\Users\\Sterling\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe monitor.py");
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            String ret = in.readLine();
+            System.out.println("value is : " + ret);
+             */
+        } catch (IOException exception) {
+            System.out.println(exception.getMessage());
+
+        }
     }//GEN-LAST:event_ScanButtonActionPerformed
     int FileHolder = 0;
     private void ChangeModeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeModeButtonActionPerformed
