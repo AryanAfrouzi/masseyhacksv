@@ -136,7 +136,20 @@ public class LandingPage extends javax.swing.JFrame {
     private void ScanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScanButtonActionPerformed
         //String prg = "import sys";
         try {//as long as python exe path is working, it should work???
-            Process p = Runtime.getRuntime().exec("C:\\Users\\Sterling\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe monitor.py");
+            File inputFile1 = new File("monitor.py");
+            Scanner scanner = new Scanner(inputFile1);
+
+            if (scanner.hasNextLine()) {
+                String PythonAppPath = "C:\\Users\\Sterling\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe";
+                
+                String MonitorPath = "C:\\Users\\Sterling\\Desktop\\masseyhacksv\\monitor.py";
+                Process p = Runtime.getRuntime().exec(PythonAppPath + " " + MonitorPath);
+                System.out.println("yay");
+
+            } else {
+                System.exit(0);
+            }
+
             /*
             
             mentor's edits
@@ -146,7 +159,6 @@ public class LandingPage extends javax.swing.JFrame {
             String ret = in.readLine();
             System.out.println("value is : " + ret);
              */
-            System.out.println("yay");
         } catch (IOException exception) {
             System.out.println(exception.getMessage());
 
