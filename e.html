@@ -8,55 +8,43 @@ Content-Type: text/html
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#6622aa">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ValueError</strong></big></big></font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>AttributeError</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial">Python 3.6.5: /Users/alexanderChudinov/anaconda3/bin/python<br>Sat Mar 23 16:32:23 2019</font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial">Python 3.6.5: /Users/alexanderChudinov/anaconda3/bin/python<br>Sat Mar 23 21:06:24 2019</font></td></tr></table>
     
 <p>A problem occurred in a Python script.  Here is the sequence of
 function calls leading up to the error, in the order they occurred.</p>
 <table width="100%" cellspacing=0 cellpadding=0 border=0>
 <tr><td bgcolor="#d8bbff"><big>&nbsp;</big><a href="file:///Users/alexanderChudinov/Desktop/masseyhacks5/modelTrainer.py">/Users/alexanderChudinov/Desktop/masseyhacks5/modelTrainer.py</a> in <strong><module></strong>()</td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;&nbsp;9</small>&nbsp;import&nbsp;numpy<br>
+<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;36</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#normalized_data&nbsp;=&nbsp;(data&nbsp;-&nbsp;minimum)&nbsp;/&nbsp;(maximum&nbsp;-&nbsp;minimum)<br>
 </tt></font></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;10</small>&nbsp;from&nbsp;numpy&nbsp;import&nbsp;array<br>
+<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;37</small>&nbsp;<br>
 </tt></font></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;11</small>&nbsp;#&nbsp;fix&nbsp;random&nbsp;seed&nbsp;for&nbsp;reproducibility<br>
-</tt></font></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;12</small>&nbsp;numpy.random.seed(7)<br>
-</tt></font></td></tr>
-<tr><td bgcolor="#ffccee"><tt>=&gt;<small>&nbsp;&nbsp;&nbsp;13</small>&nbsp;dataset&nbsp;=&nbsp;numpy.loadtxt("dataset.csv",&nbsp;delimiter=",")<br>
+<tr><td bgcolor="#ffccee"><tt>=&gt;<small>&nbsp;&nbsp;&nbsp;38</small>&nbsp;print(normalize(0))<br>
 </tt></td></tr>
-<tr><td><small><font color="#909090">dataset <em>undefined</em>, <strong>numpy</strong>&nbsp;= &lt;module 'numpy' from '/Users/alexanderChudinov/a...3/lib/python3.6/site-packages/numpy/__init__.py'&gt;, numpy.<strong>loadtxt</strong>&nbsp;= &lt;function loadtxt&gt;, delimiter <em>undefined</em></font></small></td></tr></table>
+<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;39</small>&nbsp;<br>
+</tt></font></td></tr>
+<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;40</small>&nbsp;model&nbsp;=&nbsp;Sequential()<br>
+</tt></font></td></tr>
+<tr><td><small><font color="#909090"><em>builtin</em> <strong>print</strong>&nbsp;= &lt;built-in function print&gt;, <strong>normalize</strong>&nbsp;= &lt;function normalize&gt;</font></small></td></tr></table>
 <table width="100%" cellspacing=0 cellpadding=0 border=0>
-<tr><td bgcolor="#d8bbff"><big>&nbsp;</big><a href="file:///Users/alexanderChudinov/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py">/Users/alexanderChudinov/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py</a> in <strong>loadtxt</strong>(fname='dataset.csv', dtype=dtype('float64'), comments=&lt;generator object loadtxt.&lt;locals&gt;.&lt;genexpr&gt;&gt;, delimiter=',', converters=[&lt;function _getconv.&lt;locals&gt;.floatconv&gt;, &lt;function _getconv.&lt;locals&gt;.floatconv&gt;], skiprows=0, usecols=None, unpack=False, ndmin=0, encoding=None)</td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;1090</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;converting&nbsp;the&nbsp;data<br>
+<tr><td bgcolor="#d8bbff"><big>&nbsp;</big><a href="file:///Users/alexanderChudinov/Desktop/masseyhacks5/modelTrainer.py">/Users/alexanderChudinov/Desktop/masseyhacks5/modelTrainer.py</a> in <strong>normalize</strong>(column_id=0)</td></tr>
+<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;27</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column&nbsp;=&nbsp;[]<br>
 </tt></font></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;1091</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;=&nbsp;None<br>
+<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;28</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;x&nbsp;in&nbsp;range(len(X[0])):<br>
 </tt></font></td></tr>
-<tr><td bgcolor="#ffccee"><tt>=&gt;<small>&nbsp;1092</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;x&nbsp;in&nbsp;read_data(_loadtxt_chunksize):<br>
+<tr><td bgcolor="#ffccee"><tt>=&gt;<small>&nbsp;&nbsp;&nbsp;29</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.push(X[x][column_id])<br>
 </tt></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;1093</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;X&nbsp;is&nbsp;None:<br>
+<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;30</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmax&nbsp;=&nbsp;max(column)<br>
 </tt></font></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;1094</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;=&nbsp;np.array(x,&nbsp;dtype)<br>
+<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;&nbsp;&nbsp;31</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmin&nbsp;=&nbsp;min(column)<br>
 </tt></font></td></tr>
-<tr><td><small><font color="#909090">x <em>undefined</em>, <strong>read_data</strong>&nbsp;= &lt;function loadtxt.&lt;locals&gt;.read_data&gt;, <em>global</em> <strong>_loadtxt_chunksize</strong>&nbsp;= 50000</font></small></td></tr></table>
-<table width="100%" cellspacing=0 cellpadding=0 border=0>
-<tr><td bgcolor="#d8bbff"><big>&nbsp;</big><a href="file:///Users/alexanderChudinov/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py">/Users/alexanderChudinov/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py</a> in <strong>read_data</strong>(chunk_size=50000)</td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;1014</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_num&nbsp;=&nbsp;i&nbsp;+&nbsp;skiprows&nbsp;+&nbsp;1<br>
-</tt></font></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;1015</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError("Wrong&nbsp;number&nbsp;of&nbsp;columns&nbsp;at&nbsp;line&nbsp;%d"<br>
-</tt></font></td></tr>
-<tr><td bgcolor="#ffccee"><tt>=&gt;<small>&nbsp;1016</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;line_num)<br>
-</tt></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;1017</small>&nbsp;<br>
-</tt></font></td></tr>
-<tr><td><font color="#909090"><tt>&nbsp;&nbsp;<small>&nbsp;1018</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Convert&nbsp;each&nbsp;value&nbsp;according&nbsp;to&nbsp;its&nbsp;column&nbsp;and&nbsp;store<br>
-</tt></font></td></tr>
-<tr><td><small><font color="#909090"><strong>line_num</strong>&nbsp;= 1110</font></small></td></tr></table><p><strong>ValueError</strong>: Wrong number of columns at line 1110
+<tr><td><small><font color="#909090"><strong>column</strong>&nbsp;= [], column.push <em>undefined</em>, <em>global</em> <strong>X</strong>&nbsp;= array([[3.32000e+02, 2.24000e+02, 2.58000e+02, .... 3.18464e+05,
+        7.20000e+01, 0.00000e+00]]), <strong>x</strong>&nbsp;= 0, <strong>column_id</strong>&nbsp;= 0</font></small></td></tr></table><p><strong>AttributeError</strong>: 'list' object has no attribute 'push'
 <br><tt><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small>&nbsp;</tt>args&nbsp;=
-('Wrong number of columns at line 1110',)
+("'list' object has no attribute 'push'",)
 <br><tt><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small>&nbsp;</tt>with_traceback&nbsp;=
-&lt;built-in method with_traceback of ValueError object&gt;
+&lt;built-in method with_traceback of AttributeError object&gt;
 
 
 <!-- The above is a description of an error in a Python program, formatted
@@ -64,12 +52,10 @@ function calls leading up to the error, in the order they occurred.</p>
      are not reading this in a Web browser, here is the original traceback:
 
 Traceback (most recent call last):
-  File "modelTrainer.py", line 13, in &lt;module&gt;
-    dataset = numpy.loadtxt("dataset.csv", delimiter=",")
-  File "/Users/alexanderChudinov/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py", line 1092, in loadtxt
-    for x in read_data(_loadtxt_chunksize):
-  File "/Users/alexanderChudinov/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py", line 1016, in read_data
-    % line_num)
-ValueError: Wrong number of columns at line 1110
+  File "modelTrainer.py", line 38, in &lt;module&gt;
+    print(normalize(0))
+  File "modelTrainer.py", line 29, in normalize
+    column.push(X[x][column_id])
+AttributeError: 'list' object has no attribute 'push'
 
 -->
