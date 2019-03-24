@@ -9,6 +9,8 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 from keras.utils import to_categorical
 
+import math
+
 import numpy
 from numpy import array
 # fix random seed for reproducibility
@@ -31,19 +33,32 @@ def normalize(column_id):
     cmin = min(column)
     for x in range(len(X[0])):
         cval = X[x][column_id]
-        X[x][column_id] = (cval - cmin) / (cmax - cmin)
-    return column
+        if (math.isnan((cval - cmin) / (cmax - cmin))==False):
+            X[x][column_id] = (cval - cmin) / (cmax - cmin)
+        else:
+            X[x][column_id] = 0
     #normalized_data = (data - minimum) / (maximum - minimum)
 
+for x in range(len(X[0])):
+    normalize(x)
+print("\n\n-----------------")
+print(X[0])
+print("-----------------\n\n")
 model = Sequential()
 model.add(Dense(55, input_dim=54, activation='relu'))
 model.add(Dense(36, activation='relu'))
 model.add(Dense(16, activation='relu'))
 model.add(Dense(2, activation='softmax'))
 
-model.compile(loss='binary_crossentropy', optimizer=Adam(lr=0.05), metrics=['accuracy'])
-model.fit(X, Y, epochs=20, batch_size=10, shuffle=True)
-scores = model.evaluate(X, Y)
+model.compile(loss='binary_crossentropy', optimizer=Adam(lr=0.0001), metrics=['accuracy'])
+model.fit(X, Y, epochs=20, batch_size=32, shuffle=True)
+
+test_dataset = numpy.loadtxt("testdata.csv", delimiter=",")
+# split into input (X) and output (Y) variables
+X_test = test_dataset[:,0:54]
+Y_test = to_categorical(test_dataset[:,54])
+
+scores = model.evaluate(X_test, Y_test)
 print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 weights_json = model.to_json()
