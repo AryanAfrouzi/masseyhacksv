@@ -43,7 +43,7 @@ public class LandingPage extends javax.swing.JFrame {
         ScanButton = new javax.swing.JButton();
         ChangeModeButton = new javax.swing.JButton();
         AboutButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Title = new javax.swing.JLabel();
         ChangeThemeButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -82,9 +82,11 @@ public class LandingPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setText("Chungus Antivirus");
+        Title.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Title.setForeground(new java.awt.Color(51, 51, 255));
+        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title.setText("TechSavvyGranny");
+        Title.setAlignmentX(0.5F);
 
         ChangeThemeButton.setText("Change Theme");
         ChangeThemeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -103,31 +105,29 @@ public class LandingPage extends javax.swing.JFrame {
                     .addComponent(ChangeThemeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AboutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ChangeModeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                 .addComponent(ScanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(37, 37, 37))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(232, 232, 232))
+                .addContainerGap()
+                .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24)
+                .addGap(37, 37, 37)
+                .addComponent(Title)
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ScanButton, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                        .addContainerGap(129, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ChangeModeButton)
-                        .addGap(34, 34, 34)
                         .addComponent(ChangeThemeButton)
-                        .addGap(37, 37, 37)
-                        .addComponent(AboutButton)
-                        .addGap(77, 77, 77))))
+                        .addGap(72, 72, 72)
+                        .addComponent(ChangeModeButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                        .addComponent(AboutButton))
+                    .addComponent(ScanButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
 
         pack();
@@ -166,6 +166,7 @@ public class LandingPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ScanButtonActionPerformed
     int FileHolder = 0;
     private void ChangeModeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeModeButtonActionPerformed
+        Font XLFont = new Font ("Arial", Font.PLAIN, 52);
         Font largeFont = new Font("Arial", Font.PLAIN, 40);
         Font medFont = new Font("Arial", Font.PLAIN, 28);
         Font smallFont = new Font("Arial", Font.PLAIN, 14);
@@ -176,6 +177,7 @@ public class LandingPage extends javax.swing.JFrame {
             ChangeThemeButton.setFont(medFont);
             ScanButton.setFont(medFont);
             FileHolder = 5;
+            Title.setFont (medFont);
 
         } else if (FileHolder == 1) {
             ChangeModeButton.setFont(largeFont);
@@ -183,13 +185,14 @@ public class LandingPage extends javax.swing.JFrame {
             ScanButton.setFont(largeFont);
             ChangeThemeButton.setFont(largeFont);
             FileHolder = 7;
-
+            Title.setFont (largeFont);
         } else if (FileHolder == 2) {
             ChangeModeButton.setFont(smallFont);
             AboutButton.setFont(smallFont);
             ChangeThemeButton.setFont(smallFont);
             ScanButton.setFont(smallFont);
             FileHolder = 9;
+            Title.setFont (smallFont);            
 
         }
         if (FileHolder == 5) {
@@ -235,15 +238,15 @@ public class LandingPage extends javax.swing.JFrame {
         }
         if (themeChooser == 5) {
             themeChooser = 1;
-            jLabel1.setForeground(Color.BLACK);
+            Title.setForeground(Color.BLACK);
         }
         if (themeChooser == 7) {
             themeChooser = 2;
-            jLabel1.setForeground(Color.BLACK);
+            Title.setForeground(Color.BLACK);
         }
         if (themeChooser == 9) {
             themeChooser = 0;
-            jLabel1.setForeground(lightTheme);
+            Title.setForeground(lightTheme);
         }
     }//GEN-LAST:event_ChangeThemeButtonActionPerformed
     /**
@@ -294,7 +297,7 @@ public class LandingPage extends javax.swing.JFrame {
     private javax.swing.JButton ChangeModeButton;
     private javax.swing.JButton ChangeThemeButton;
     private javax.swing.JButton ScanButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel Title;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
