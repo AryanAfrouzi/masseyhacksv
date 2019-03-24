@@ -1,8 +1,7 @@
-# masseyhacksv
-Inspirations: 
+# MasseyHacks 2019
 
-
-
+  # Inspirations: 
+    - Our drive and curiousity for machine learning, cyber security, and data science pushed us to make a complex antivirus with intruistic features beyond our years of experience by simply collaborating together and using the opportunity our parents gave us to make the best of ourselves. 
 
 
 
