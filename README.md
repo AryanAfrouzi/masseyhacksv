@@ -1,22 +1,22 @@
 # MasseyHacks 2019
 
   # Inspirations: 
-    - Our drive and curiousity for machine learning, cyber security, and data science pushed us to make a complex antivirus with intruistic features beyond our years of experience by simply collaborating together and using the opportunity our parents gave us to make the best of ourselves. 
+   Our drive and curiousity for machine learning, cyber security, and data science pushed us to make a complex antivirus with intruistic features beyond our years of experience by simply collaborating together and using the opportunity our parents gave us to make the best of ourselves. 
 
 
 
   # How We Built It:
 
-    -  Our antivirus was written mainly in python3 and is driven by supervised machine learning. We used Keras, and numpy to supervise the AI. As an additional feature we used the classic signature method to help increase overall malware detection for our program. We used a dataset with PE(Portable Excutable Headers) to train our model. We also setup multiple monitoring systems for packet analysis, and RAM usage. We used data normalization to increase accuracy and learning speed for the AI. 
+   Our antivirus was written mainly in python3 and is driven by supervised machine learning. We used Keras, and numpy to supervise the AI. As an additional feature we used the classic signature method to help increase overall malware detection for our program. We used a dataset with PE(Portable Excutable Headers) to train our model. We also setup multiple monitoring systems for packet analysis, and RAM usage. We used data normalization to increase accuracy and learning speed for the AI. 
 
 
   # Challenges We Ran Into:
 
-    - One of the main challenges we ran into was formatting the .csv dataset the right way for the AI to start progressing properly. Our dataset was extremely big and wasn't formatted in the most efficient way that slowed our learning speed by hours. 
+  One of the main challenges we ran into was formatting the .csv dataset the right way for the AI to start progressing properly. Our dataset was extremely big and wasn't formatted in the most efficient way that slowed our learning speed by hours. 
 
 
   # Accomplishments:
-    - Having a full working AI model with 75% accuracy for malware detection
+    - Having a full working AI model with 70% accuracy for malware detection
     - Successfully learning how to use Keras, and Tensorflow library
     - In-Depth proffiency for detection of different malware features.
     - Creating such a complex project in 24 hours
