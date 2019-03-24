@@ -68,8 +68,11 @@ public class About extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
-                this.dispose();
-        JFrame LandingPage = new JFrame();
+        new LandingPage().setVisible(true);
+
+        this.dispose();//to close the current jframe
+
+
     }//GEN-LAST:event_BackActionPerformed
 
     /**
