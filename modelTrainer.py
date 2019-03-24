@@ -22,11 +22,6 @@ dataset = numpy.loadtxt("dataset.csv", delimiter=",")
 X = dataset[:,0:54]
 Y = to_categorical(dataset[:,54])
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.33)
-#print(X)
-#print("---------")
-#print(Y)
-
-#data normalization
 
 def normalize(column_id):
     column = []
