@@ -1,6 +1,6 @@
 hashesFile = open('stolen.txt', 'r')
 hashesFile = hashesFile.read()
-hashes = hashesFile.split('\n')
+data = hashesFile.split('\n')
 
 def toString(y): 
     s = ""
@@ -11,9 +11,13 @@ def toString(y):
     return s
 
 hashesFileOperation = open("dataset.csv", "a")
-for x in range(len(hashes)):
-    hashes[x] = hashes[x].split('|')
-    a = list(hashes[x])
+for x in range(len(data)):
+    data[x] = data[x].split('|')
+    a = list(data[x])
     del(a[:2])
+    del(a[31:38])
+    del(a[34:-2])
+    del(a[-2])
+
     hashesFileOperation.write(toString(a)+'\n')
 

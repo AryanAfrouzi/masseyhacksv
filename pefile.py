@@ -1,4 +1,6 @@
 from pefile import PE
+
+from pefile import *
 import sys
 def getPE(file):
     if(PE(file)==True):
